@@ -1,26 +1,33 @@
 import { useState } from 'react'
-import Header from './Header'
+import Header from './Main/Header'
 import "./Main.css"
 import PropTypes from 'prop-types'
-import List from './List'
+import List from './Main/List'
 
 function Main() {
 
-    const [list, setList] = useState(JSON.parse(localStorage.getItem("i")) || [])
+    const [toDos, setToDos] = useState(JSON.parse(localStorage.getItem("key")) || [])
+
+    const defaultList = [
+        "Testing element one",
+        "Testing element two",
+        "Testing element three",
+    ]
 
     return (
-        <div class="d-flex flex-column justify-content-center w-100 h-100">
-            <div>
-                <header className='header'>
-                    <Header list={list} setList={setList} />
-                    <List list={list} setList={setList} />
-                </header>
-            </div>
+        <div>
+            <header className='header'>
+
+                <Header toDos={toDos} setToDos={setToDos} />
+
+                <List toDos={toDos} setToDos={setToDos} />
+
+            </header>
         </div>
     )
 }
 
 Main.propTypes = {
-    list: PropTypes.array,
+    toDos: PropTypes.array,
 }
 export default Main
