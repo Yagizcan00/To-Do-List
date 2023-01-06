@@ -1,11 +1,13 @@
 body {
     text-align: center;
 
+    color: lightgray;
+
     font-family: cursive;
 
     margin: 70px 70px 0px 70px;
 
-    background: linear-gradient(-45deg, darkmagenta, purple, darkorange, orange);
+    background: linear-gradient(-45deg, darkmagenta, purple, rgb(255, 100, 0), rgb(255, 50, 0));
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
     height: 100vh;
@@ -25,18 +27,19 @@ body {
     }
 }
 
-.header input {
+header input {
 
     width: 250px;
     height: 30px;
 
     font-family: cursive;
+    font-size: large;
 
     border-radius: 10%;
     border-color: black;
 }
 
-.header button {
+header button {
     background-color: lightgray;
 
     width: 50px;
@@ -50,7 +53,7 @@ body {
     border-color: black;
 }
 
-.header h1 {
+header h1 {
     color: lightgrey;
 
     text-decoration: underline;
@@ -63,4 +66,40 @@ body {
         -1px -1px black,
         1px -1px black,
         -1px 1px black;
+}
+
+section {
+    float: left;
+
+    margin-left: 32%;
+}
+
+section ul {
+    list-style: none;
+
+    font-size: large;
+}
+
+section li {
+    text-align: left;
+    text-shadow:
+        2px 0 black,
+        -2px 0 black,
+        0 2px black,
+        0 -2px black,
+        1px 1px black,
+        -1px -1px black,
+        1px -1px black,
+        -1px 1px black;
+}
+section button {
+    background-color: lightgray;
+
+    margin-left: 10px;
+
+    font-family: cursive;
+    font-size: large;
+
+    border-radius: 20%;
+    border-color: black;
 }

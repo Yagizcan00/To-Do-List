@@ -6,23 +6,18 @@ import List from './Main/List'
 
 function Main() {
 
-    const [toDos, setToDos] = useState(JSON.parse(localStorage.getItem("key")) || [])
-
-    const defaultList = [
-        "Testing element one",
-        "Testing element two",
-        "Testing element three",
-    ]
+    const [toDos, setToDos] = useState(
+        JSON.parse(localStorage.getItem("key")) || []
+    )
 
     return (
         <div>
-            <header className='header'>
-
+            <header>
                 <Header toDos={toDos} setToDos={setToDos} />
-
-                <List toDos={toDos} setToDos={setToDos} />
-
             </header>
+            <section>
+                <List toDos={toDos} setToDos={setToDos} />
+            </section>
         </div>
     )
 }

@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
 function Header({ toDos, setToDos }) {
 
-    const [form, setForm] = useState({ name: "", id: 1, check: false })
+    var currentIndex = toDos.length;
+    
+    const [form, setForm] = useState({ name: "", id: currentIndex, check: false })
 
     const onChangeInput = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value })
@@ -22,7 +24,7 @@ function Header({ toDos, setToDos }) {
             ...form,
             name: "",
             check: false,
-            id: toDos.length > 0 ? toDos[toDos.length].id + 1 : 1,
+            id: form.id += 1,
         })
 
         setToDos([...toDos, form])

@@ -2,8 +2,6 @@ import { useEffect } from 'react'
 
 function List({ toDos, setToDos }) {
 
-    console.log(toDos);
-
     useEffect(() => {
         localStorage.setItem("key", JSON.stringify([...toDos]))
     }, [toDos])
@@ -11,9 +9,15 @@ function List({ toDos, setToDos }) {
     return (
         <div>
             <ul>
-                {toDos?.map((item) =>
-                <li>{item}</li> 
-                )}
+                {toDos.map((item) => (
+                    <div style={{ flexDirection: 'row', display: 'flex'}}>
+                        <li key={item.id}>
+                            {item.id} - {item.name}
+                        </li>
+                        <button>Delete</button>
+                        <button>Check</button>
+                    </div>
+                ))}
             </ul>
         </div>
     )
