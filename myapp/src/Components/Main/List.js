@@ -7,29 +7,26 @@ function List({ toDos, setToDos }) {
     }, [toDos])
 
     const Delete = event => {
-        console.log(event);
-        setToDos(oldValues => {
-            return oldValues.filter((_, i) => i !== event)
-        })
+        setToDos(toDos.filter((todo) => parseInt(todo.id) !== parseInt(event)));
     }
 
-    const Check = () => {
-
+    const Check = event => {
+        console.log(event);
     }
 
     return (
         <div>
-            <ul>
+            <ol>
                 {toDos.map((item) => (
                     <div style={{ flexDirection: 'row', display: 'flex' }}>
                         <li key={item.id}>
-                            {item.id} - {item.name}
+                            {item.name}
                         </li>
                         <button id={item.id} onClick={() => Delete(item.id)}>Delete</button>
-                        <button id={item.id} onClick={Check}>Check</button>
+                        <button id={item.id} onClick={() => Check(item.check)}>Check</button>
                     </div>
                 ))}
-            </ul>
+            </ol>
         </div>
     )
 }

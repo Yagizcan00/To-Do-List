@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import PropTypes from 'prop-types'
 
 function Header({ toDos, setToDos }) {
 
     var currentIndex = toDos.length;
-    
+
     const [form, setForm] = useState({ name: "", id: currentIndex, check: false })
 
     const onChangeInput = (event) => {

@@ -74,9 +74,7 @@ section {
     margin-left: 32%;
 }
 
-section ul {
-    list-style: none;
-
+section ol {
     font-size: large;
 }
 
