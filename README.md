@@ -1,3 +1,2 @@
-# To-Do-List-2
--> I'm trying more clean and more useful code in this project.
--> NOT FINISH !!!
+# To-Do-List
+-> This project is finished but ı have one problem about uniq key. When I clear the list elements, their ID values are mixed. I will fix this later.
