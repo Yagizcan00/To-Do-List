@@ -3,7 +3,7 @@ import Header from './Main/Header'
 import "./Main.css"
 import PropTypes from 'prop-types'
 import List from './Main/List'
-
+import Footer from './Main/Footer'
 function Main() {
 
     const [toDos, setToDos] = useState(
@@ -18,6 +18,9 @@ function Main() {
             <section>
                 <List toDos={toDos} setToDos={setToDos} />
             </section>
+            <footer>
+                <Footer toDos={toDos} setToDos={setToDos} />
+            </footer>
         </div>
     )
 }
